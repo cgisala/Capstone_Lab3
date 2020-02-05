@@ -51,6 +51,12 @@ class ClassList:
     ## TODO add a method called is_class_full.
     # This should return True or False to indicate if the class is full.
 
+    def is_class_full(self, students):
+        if len(self.class_list) == self.max_students:
+            return True
+        else:
+            return False
+
 
     def __str__(self):
         return ", ".join(self.class_list)
@@ -90,7 +96,10 @@ def main():
     print('Anna is at position', capstone.index_of_student('Anna') ) ## 4
     print('Alex is at position', capstone.index_of_student('Alex') ) ## None
 
-
+    if capstone.is_class_full(capstone):
+       print('The class is full')
+    else:
+       print('The class is not full')
 
 if __name__ == '__main__':
     main()
